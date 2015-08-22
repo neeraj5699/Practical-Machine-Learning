@@ -57,7 +57,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <h3>Practical Machine Learning - Weight Lifting Exercise Analysis</h3>
 <div id="practical-machine-learning---weight-lifting-exercise-analysis-1" class="section level4">
 <h4>Practical Machine Learning - Weight Lifting Exercise Analysis</h4>
-<p>© 2014 Sharan Babu Katragadda</p>
+<p>Â© 2015 Neeraj Kumar</p>
 <p>This project deals with analysing existing data and developing predictive models using Algorithms (supervised learning and Unsupervised Learning) in CARET Package of R programming language. These models will be used to predict outcome of new data.</p>
 </div>
 <div id="description" class="section level4">
@@ -91,7 +91,7 @@ registerDoParallel(rCluster);</code></pre>
 </div>
 <div id="step-2-source-cleaning-and-processing-data" class="section level4">
 <h4>Step 2: Source, Cleaning and Processing Data</h4>
-<p>Imported pml-training.csv into workspace and assigned those values to trainRawData variable. In further steps, I cleaned data by removing columns with NA’s from dataset. This is done to reduce the number of insignificant columns thereby improving the processing time and accuracy.</p>
+<p>Imported pml-training.csv into workspace and assigned those values to trainRawData variable. In further steps, I cleaned data by removing columns with NAâs from dataset. This is done to reduce the number of insignificant columns thereby improving the processing time and accuracy.</p>
 <pre><code>trainRawData &lt;- read.csv(&quot;pml-training.csv&quot;,na.strings=c(&quot;NA&quot;,&quot;&quot;));
 NAs &lt;- apply(trainRawData,2,function(x) {sum(is.na(x))});
 
@@ -120,7 +120,7 @@ trainData &lt;- trainData[,-removeIndex];</code></pre>
 <ul>
 <li>13737 samples</li>
 <li>53 predictors</li>
-<li>5 classes: ‘A’, ‘B’, ‘C’, ‘D’, ‘E’</li>
+<li>5 classes: âAâ, âBâ, âCâ, âDâ, âEâ</li>
 </ul>
 </div>
 <div id="step-5-model-fitting" class="section level4">
@@ -222,13 +222,13 @@ cfM</code></pre>
 ## Detection Prevalence    0.287    0.192    0.175    0.164    0.182
 ## Balanced Accuracy       0.998    0.992    0.994    0.993    0.994</code></pre>
 <p>The expected out of sample error is: 0.8474 %</p>
-<p>Note: The confusionMatrix function from the Caret package does provide all the information that we calculated ‘by hand’ in the first part of the Cross-validation. It shows that both methods provide the same answer.</p>
+<p>Note: The confusionMatrix function from the Caret package does provide all the information that we calculated âby handâ in the first part of the Cross-validation. It shows that both methods provide the same answer.</p>
 </div>
 </div>
 <div id="comparing-predicted-values-against-actual-classe-values-of-testing-data-set" class="section level4">
 <h4>Comparing predicted values against actual Classe values of testing data set:</h4>
 <p>To cross check the out come of prediction, I added these a column next to Classe for comparision. Further, I took comparision of both by equating them. Comparision column show us if the prediction we did is correct or not. Comparision values:</p>
-<p>TRUE - This means, actual value <code>classe</code> and predicted value <code>predictedValues</code> are same. Our model worked perfect for this case. FALSE - Actual value and predicted value are different. Model was not good enough to predict that particular case. But it’ll be difficult to check each and every row for TRUE or FALSE. So I took total count of case in each segment (TRUE or FALSE). I have used <code>length()</code> function to get total count.</p>
+<p>TRUE - This means, actual value <code>classe</code> and predicted value <code>predictedValues</code> are same. Our model worked perfect for this case. FALSE - Actual value and predicted value are different. Model was not good enough to predict that particular case. But itâll be difficult to check each and every row for TRUE or FALSE. So I took total count of case in each segment (TRUE or FALSE). I have used <code>length()</code> function to get total count.</p>
 <pre><code>testData$predictedValues&lt;-predictedValues;
 testData$Comparision&lt;-testData$predictedValues==testData$classe;
 
